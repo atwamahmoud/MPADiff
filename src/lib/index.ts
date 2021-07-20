@@ -40,7 +40,6 @@ class MPADiff {
       e.preventDefault();
 
       getURLContent(link.href).then((html) => {
-        console.log(html);
         this.updateHTML(html);
         this.updateBrowserHistory(html, link.href, getTitleFromHtml(html));
       });
