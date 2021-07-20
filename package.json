@@ -96,5 +96,8 @@
       "jsx",
       "node"
     ]
+  },
+  "dependencies": {
+    "copy-webpack-plugin": "^9.0.1"
   }
 }

@@ -31,7 +31,7 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'build'),
-    library: "MyLibrary",
+    library: "MPADiff",
     libraryTarget: 'umd',
     clean: true
   },
@@ -79,9 +79,6 @@ module.exports = {
   },
   plugins: [
     new PrettierPlugin(),
-    new MiniCssExtractPlugin({
-        filename: 'css/index.css'
-    }),
     new webpack.BannerPlugin(banner)
   ],
   resolve: {
