@@ -7,9 +7,9 @@ type URLObject = {
 
 const urls: Record<string, URLObject> = {};
 
-export function fetchURL(url: string) {
-  if (urls[url]) return;
-  urls[url] = {
+export function fetchURL(url: string, cache = urls) {
+  if (cache[url]) return;
+  cache[url] = {
     didFetch: false,
     errored: false,
     promise: fetch(url)
@@ -28,12 +28,15 @@ export function fetchURL(url: string) {
   };
 }
 
-export function getURLContent(url: string): Promise<string | undefined> {
-  if (!urls[url])
+export function getURLContent(
+  url: string,
+  cache = urls
+): Promise<string | undefined> {
+  if (!cache[url])
     throw new Error(`Couldn't find url: ${url} in saved records!`);
   return new Promise<string | undefined>((resolve) => {
-    if (urls[url].didFetch) resolve(urls[url].html);
+    if (cache[url].didFetch) resolve(cache[url].html);
 
-    resolve(urls[url].promise?.then(() => urls[url].html));
+    resolve(cache[url].promise?.then(() => cache[url].html));
   });
 }

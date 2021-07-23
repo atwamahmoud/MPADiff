@@ -1,0 +1,7 @@
+<ul class="movie_items_list">
+    {{#each movies as |movie|}}
+    <li class="movie_item_container">
+        {{> movie_item movie=movie}}
+    </li>
+    {{/each}}
+</ul>

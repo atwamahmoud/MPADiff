@@ -1,0 +1,29 @@
+<div class="container-sm">
+    <h2>{{movie.name}}</h2>
+    <div class="movie-item__content">
+        <img class="movie-item__poster" src="{{movie.poster_url}}" alt="{{movie.name}} Poster" />
+        <div class="movie-item__description">
+            <p>{{movie.description}}</p>
+        </div>
+    </div>
+    <hr />
+    <p>Release date: <small class="text-muted">{{movie.released}}</small></p>
+    <p>Rated: <small class="text-muted">{{movie.rated}}</small></p>
+    <p>Genre: <small class="text-muted">{{movie.genre}}</small></p>
+    <p>Runtime: <small class="text-muted">{{movie.runtime}}</small></p>
+    <p>Director: <small class="text-muted">{{movie.director}}</small></p>
+    <p>Actors: <small class="text-muted">{{movie.actors}}</small></p>
+    <p>Awards: <small class="text-muted">{{movie.awards}}</small></p>
+    <p>Written By: <small class="text-muted">{{movie.writtenBy}}</small></p>
+    <p>Ratings</p>
+    <ul>
+    {{#each movie.ratings as |rating|}}
+        <li>
+            <p>{{rating.Source}}: <small class="text-muted">{{rating.Value}}</small></p>
+        </li>
+    {{/each}}
+    </ul>
+    <p>Earnings: <small class="text-muted">{{movie.earnings}}</small></p>
+    <p>Produced by: <small class="text-muted">{{movie.producedBy}}</small></p>
+    <a href="https://www.imdb.com/title/{{movie.id}}">IMDb</a>
+</div>
