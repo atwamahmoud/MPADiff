@@ -1,8 +1,11 @@
 import { fetchURL, getURLContent } from "../utils/network";
-import fetch from "node-fetch";
 
 beforeAll(() => {
-  global.fetch = fetch;
+  (global.fetch as any) = jest.fn(() =>
+  Promise.resolve({
+    text: () => Promise.resolve("html"),
+  })
+);
 });
 
 it("Adds a Cache entry", () => {
