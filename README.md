@@ -1,49 +1,85 @@
  <div align="center">
- <img align="center" width="230" src="https://i.imgur.com/iHgtvmg.png" />
-  <h2>Typescript Library Boilerplate Basic</h2>
-  <blockquote>Minimal Library Starter Kit for your Typescript projects</blockquote>
- 
- <a href="https://github.com/hodgef/ts-library-boilerplate-basic/actions"><img alt="Build Status" src="https://github.com/hodgef/ts-library-boilerplate-basic/workflows/Build/badge.svg?color=green" /></a> <a href="https://github.com/hodgef/ts-library-boilerplate-basic/actions"> <img alt="Publish Status" src="https://github.com/hodgef/ts-library-boilerplate-basic/workflows/Publish/badge.svg?color=green" /></a> <img src="https://img.shields.io/david/hodgef/ts-library-boilerplate-basic.svg" /> <a href="https://david-dm.org/hodgef/ts-library-boilerplate-basic?type=dev"><img src="https://img.shields.io/david/dev/hodgef/ts-library-boilerplate-basic.svg" /></a> <img src="https://api.dependabot.com/badges/status?host=github&repo=hodgef/ts-library-boilerplate-basic" />
- 
-<strong>For a plain Javascript alternative, check out [js-library-boilerplate-basic](https://github.com/hodgef/js-library-boilerplate-basic).</strong>
-
-</div>
+  <h2>MPADiff</h2>
+  <blockquote>Minimal Library to mimic Single page apps. behaviour in Multi page apps.</blockquote>
+ </div>
 
 ## ⭐️ Features
 
-- Webpack 5
-- Babel 7
-- Hot reloading (`npm start`)
-- Automatic Types file generation (index.d.ts)
-- UMD exports, so your library works everywhere.
-- Jest unit testing
-- Daily [dependabot](https://dependabot.com) dependency updates
+- Custom loaders
+- Eager & Lazy Loading
+- Custom delays
+- Doesn't reload CSS.
+- 3kb (Gzipped)
+- TypeScript
+- No Iframes
 
 ## 📦 Getting Started
 
+### Installation
 ```
-git clone https://github.com/hodgef/ts-library-boilerplate-basic.git myLibrary
-npm install
+yarn install MPADiff
 ```
+or
+```
+npm i -S MPADiff
+```
+or
+```
+<script src="https://cdn.jsdelivr.net/gh/atwamahmoud/MPADiff/build/index.js"></script>
+```
+or self hosted
+```
+<script src="/build/index.js"></script>
+```
+
+### Usage
+
+MPADiff exposes a minimal & simple API to use.
+To activate the library, all you need to do is initialize it with your custom or default configuration options.
+#### Example
+
+```
+<script src="https://cdn.jsdelivr.net/gh/atwamahmoud/MPADiff/build/index.js"></script>
+<script>
+window.MPADiff.default.init({
+    loaderDelay: 500,
+    eagerLoading: false,
+    loaderElement: undefined,
+})
+</script>
+```
+
 
 ## 💎 Customization
 
-> Before shipping, make sure to:
+| Option | Type | Explanation | Default |
+---------|------|-------------|----------|
+| loaderDelay | number (ms) | number of milliseconds to wait before hiding the loader (in case of lazy loading) | 500 |
+| eagerLoading | boolean | Whether the links should be loaded once they appear or load them only when the user clicks on them. | true |
+| loaderElement | HTMLElement/Node/undefined | The element that will be used when the contents of a link is still loading and the user has clicked on it | undefined |
+## API Reference
 
-1. Edit `LICENSE` file
-2. Edit `package.json` information (These will be used to generate the headers for your built files)
-3. Edit `library: "MyLibrary"` with your library's export name in `./webpack.config.js`
+### `getInstance(): MPADiff`
 
-## 🚀 Deployment
+getInstance() returns an MPADiff object that is currently activated.
+This method is helpful since MPADiff is built based on the [Singleton Design pattern](https://en.wikipedia.org/wiki/Singleton_pattern).
+### `setDefaultLoaderDelay(delay: number): void`
 
-1. `npm publish`
-2. Your users can include your library as usual
+Sets a number representing milliseconds before removing the loader from the DOM to avoid flashing if the content was loaded too quickly.
 
-### npm
+### `setEagerLoading(eagerLoading: boolean): void`
+
+Sets a boolean representing whether the links should be eagerly or lazy loaded.
+
+### `setLoader(loader?: HTMLElement|Node): void`
+
+Sets the loader element that will be used. If `undefined` is passed, No loader will appear.
+### npm/yarn
 
 ```
-import MyLibrary from 'my-library';
-const libraryInstance = new MyLibrary();
+import MPADiff from 'MPADiff';
+MPADiff.init({...opts})
+const MPADiffInstance = MPADiff.getInstance();
 ...
 ```
 
@@ -52,15 +88,7 @@ const libraryInstance = new MyLibrary();
 ```
 <script src="build/index.js"></script>
 
-const MyLibrary = window.MyLibrary.default;
-const libraryInstance = new MyLibrary();
+MPADiff.init({...opts})
+const MPADiffInstance = MPADiff.getInstance();
 ...
 ```
-
-## ✅ Libraries built with this boilerplate
-
-> Made a library using this starter kit? Share it here by [submitting a pull request](https://github.com/hodgef/ts-library-boilerplate-basic/pulls)!
-
-- [simple-keyboard](https://github.com/hodgef/simple-keyboard) - Javascript Virtual Keyboard
-- [react-simple-keyboard](https://github.com/hodgef/react-simple-keyboard) - React Virtual Keyboard
-- [simple-keyboard-layouts](https://github.com/hodgef/simple-keyboard-layouts) - Keyboard layouts for simple-keyboard
