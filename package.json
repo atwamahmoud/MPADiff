@@ -1,13 +1,14 @@
 {
-  "name": "@hodgef/ts-library-boilerplate-basic",
-  "version": "1.0.141",
-  "description": "Typescript Minimal Starter Kit for building libraries",
+  "name": "MPADiff",
+  "version": "1.0.0",
+  "description": "Preloads links in Multipage apps to behave like an SPA",
   "main": "build/index.js",
   "types": "build/types/index.d.ts",
   "scripts": {
-    "start": "webpack serve",
     "build": "webpack && tsc",
-    "build:demo": "webpack --config webpack.config.demo.js",
+    "start": "yarn start:lib & yarn start:demo",
+    "start:lib": "webpack --watch & tsc --watch",
+    "start:demo": "cd demo && node index",
     "test": "jest --silent",
     "coverage": "npm run test -- --coverage",
     "prepare": "npm run build",
@@ -17,7 +18,7 @@
     "type": "git",
     "url": "https://github.com/hodgef/ts-library-boilerplate-basic"
   },
-  "author": "Francisco Hodge <hello@franciscohodge.com> (https://github.com/hodgef)",
+  "author": "Mahmoud Atwa <m.atwa@hotmail.com> (https://github.com/atwamahmoud)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hodgef/ts-library-boilerplate-basic/issues"

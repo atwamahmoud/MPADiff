@@ -28,10 +28,9 @@ module.exports = {
   mode: "production",
   devtool: 'source-map',
   entry: './src/lib/index.ts',
-  watch: true,
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, 'demo', 'public', 'js'),
+    path: path.resolve(__dirname, 'build'),
     library: "MPADiff",
     libraryTarget: 'umd',
     clean: true
