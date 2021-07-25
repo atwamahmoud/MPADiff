@@ -3,6 +3,15 @@
   <blockquote>Minimal Library to mimic Single page apps. behaviour in Multi page apps.</blockquote>
  </div>
 
+
+## 🚀 What, Why & How
+
+`MPADiff` is a minimal JavaScript library written in TypeScript that prevents your website to reload when the user navigates to another page. This is the default behaviour for SPAs written React, Angulat, Vue & other SPA frameworks/libraries.
+
+The main difference here is that `MPADiff` provides this functionality to multi page applications written in PHP, Node.js, ASP, or any other language/framework.
+
+It works by sending a `GET` request to URIs of links to fetch HTML. Once the user clicks on such link, the `head` element is updated (without reloading any CSS) & the `body` element is swaped. Both eager & lazy loading of HTML documents are supported and can be configured accoeding to your needs. 
+
 ## ⭐️ Features
 
 - Custom loaders
@@ -58,6 +67,12 @@ window.MPADiff.default.init({
 | eagerLoading | boolean | Whether the links should be loaded once they appear or load them only when the user clicks on them. | true |
 | loaderElement | HTMLElement/Node/undefined | The element that will be used when the contents of a link is still loading and the user has clicked on it | undefined |
 ## API Reference
+
+
+### `init(config?: Config): void`
+
+Initializes the MPADiff object with custom or default configuration options.
+Must be called before any other method. Can be called multiple times but only the first time is where the configuration is updated.
 
 ### `getInstance(): MPADiff`
 

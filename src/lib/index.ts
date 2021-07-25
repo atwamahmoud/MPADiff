@@ -102,7 +102,12 @@ class MPADiff {
   private handleLinksChange(links: HTMLAnchorElement[]) {
     for (const link of links) {
       if (
-        link.getAttribute(MPA_ATTRIBUTE_EVENT_LISTENER) === MBA_ATTRIBUTE_TRUE
+        link.getAttribute(MPA_ATTRIBUTE_EVENT_LISTENER) ===
+          MBA_ATTRIBUTE_TRUE ||
+        link.getAttribute("download") !== null ||
+        link.getAttribute("download") !== undefined ||
+        link.getAttribute("disabled") !== null ||
+        link.getAttribute("disabled") !== undefined
       )
         continue;
       if (!isHrefSameHost(link.href)) continue;

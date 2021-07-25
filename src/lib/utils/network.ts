@@ -21,13 +21,13 @@ export function fetchURL(url: string, cache = urls) {
       })
       .catch((error) => {
         console.error(error);
-        if(!urls[url]) {
+        if (!urls[url]) {
           urls[url] = {
             errored: true,
             didFetch: true,
             html: "",
-            promise: new Promise((resolve) => resolve(""))
-          }
+            promise: new Promise((resolve) => resolve("")),
+          };
         } else {
           urls[url].errored = true;
           urls[url].didFetch = true;
