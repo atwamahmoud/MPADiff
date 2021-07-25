@@ -12,6 +12,16 @@ The main difference here is that `MPADiff` provides this functionality to multi 
 
 It works by sending a `GET` request to URIs of links to fetch HTML. Once the user clicks on such link, the `head` element is updated (without reloading any CSS) & the `body` element is swaped. Both eager & lazy loading of HTML documents are supported and can be configured accoeding to your needs. 
 
+### Before
+
+https://user-images.githubusercontent.com/17679755/126884168-182659f5-e1b4-443f-9fbd-7e4c44efa69b.mov
+
+### After
+
+https://user-images.githubusercontent.com/17679755/126884171-273f4277-afa5-4b8b-b4ca-15d359d20b03.mov
+
+
+
 ## ⭐️ Features
 
 - Custom loaders
