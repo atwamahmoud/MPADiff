@@ -1,6 +1,6 @@
 {
   "name": "MPADiff",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Preloads links in Multipage apps to behave like an SPA",
   "main": "build/index.js",
   "types": "build/types/index.d.ts",
