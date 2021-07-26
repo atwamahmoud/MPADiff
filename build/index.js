@@ -1,6 +1,6 @@
 /*!
  * 
- *   MPADiff v1.0.1
+ *   MPADiff v1.0.2
  *   https://github.com/hodgef/ts-library-boilerplate-basic
  *
  *   Copyright (c) Mahmoud Atwa (https://github.com/atwamahmoud) and project contributors.
