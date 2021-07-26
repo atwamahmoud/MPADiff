@@ -1,6 +1,6 @@
 {
   "name": "mpadiff",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Preloads links in Multipage apps to behave like an SPA",
   "main": "build/index.js",
   "types": "build/types/index.d.ts",
