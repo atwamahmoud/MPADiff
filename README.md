@@ -3,6 +3,8 @@
   <blockquote>Minimal Library to mimic Single page apps. behaviour in Multi page apps.</blockquote>
  </div>
 
+[![Build](https://github.com/atwamahmoud/MPADiff/actions/workflows/main.yml/badge.svg)](https://github.com/atwamahmoud/MPADiff/actions/workflows/main.yml)
+[![Publish](https://github.com/atwamahmoud/MPADiff/actions/workflows/publish.yml/badge.svg)](https://github.com/atwamahmoud/MPADiff/actions/workflows/publish.yml)
 
 ## 🚀 What, Why & How
 
