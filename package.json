@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hodgef/ts-library-boilerplate-basic"
+    "url": "https://github.com/atwamahmoud/MPADiff"
   },
   "author": "Mahmoud Atwa <m.atwa@hotmail.com> (https://github.com/atwamahmoud)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hodgef/ts-library-boilerplate-basic/issues"
+    "url": "https://github.com/atwamahmoud/MPADiff/issues"
   },
-  "homepage": "https://github.com/hodgef/ts-library-boilerplate-basic",
+  "homepage": "https://github.com/atwamahmoud/MPADiff",
   "keywords": [
     "library",
     "starter",
@@ -50,6 +50,7 @@
     "mini-css-extract-plugin": "^2.1.0",
     "node-fetch": "^2.6.1",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "copy-webpack-plugin": "^9.0.1",
     "prettier": "^2.3.2",
     "prettier-webpack-plugin": "^1.2.0",
     "style-loader": "^3.1.0",
@@ -99,10 +100,5 @@
       "node"
     ]
   },
-  "dependencies": {
-    "copy-webpack-plugin": "^9.0.1",
-    "diff-dom": "^4.2.2",
-    "diffhtml": "^1.0.0-beta.20",
-    "uhtml": "^2.7.6"
-  }
+  "dependencies": {}
 }
